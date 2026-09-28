@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Apolo's Gp CONSTRUCIONES — Servicios de ingeniería, diseño estructural, arquitectura y consultoría en edificaciones.">
+<title>Apolo's Gp CONSTRUCIONES | Ingeniería & Construcción</title>
+<style>
+:root{
+  --ink:#111827;
+  --muted:#667085;
+  --paper:#f7f8fa;
+  --white:#fff;
+  --line:#e5e7eb;
+  --accent:#d89b32;
+  --dark:#0b1220;
+  --dark2:#121c2e;
+  --max:1180px;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+.container{width:min(var(--max),92%);margin:auto}
+.topbar{background:#080d17;color:#cbd5e1;font-size:13px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:15px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{font-size:21px;font-weight:900;letter-spacing:-.6px}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:14px;font-weight:700}
+.navlinks a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;font-weight:800;font-size:14px;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--accent);color:#111}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-outline{border-color:#cfd4dc;background:#fff}
+.hero{min-height:690px;display:flex;align-items:center;background:
+linear-gradient(90deg,rgba(6,12,23,.93) 0%,rgba(6,12,23,.78) 42%,rgba(6,12,23,.25) 100%),
+url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{max-width:760px;color:#fff;padding:95px 0}
+.kicker{display:inline-block;color:#f2c56f;font-weight:900;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-2.8px;margin-bottom:24px}
+.hero p{font-size:19px;color:#e5e7eb;max-width:650px;margin-bottom:30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.section{padding:92px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#9b6b1f;font-weight:900;margin-bottom:9px}
+h2{font-size:clamp(31px,4vw,48px);line-height:1.08;letter-spacing:-1.6px}
+.section-head p{max-width:520px;color:var(--muted)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(16,24,40,.08)}
+.icon{width:46px;height:46px;border-radius:12px;background:#fff4dc;display:grid;place-items:center;color:#9b6b1f;font-size:21px;margin-bottom:22px}
+.card h3{font-size:18px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:14px}
+.dark-section{background:var(--dark);color:#fff}
+.dark-section .section-head p{color:#aeb8c7}
+.dark-section .eyebrow{color:#f2c56f}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.project{background:#121c2e;border:1px solid #263247;border-radius:18px;overflow:hidden}
+.project img{height:250px;object-fit:cover}
+.project-body{padding:23px}
+.project-body small{color:#f2c56f;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.project-body h3{font-size:21px;margin:7px 0}
+.project-body p{color:#aeb8c7;font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.tag{border:1px solid #344158;color:#d7dee9;border-radius:99px;padding:5px 9px;font-size:11px}
+.struct{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.struct-image{border-radius:22px;overflow:hidden;min-height:510px;background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=85') center/cover}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.check b{color:var(--accent);font-size:18px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:28px;border-top:2px solid #d7dbe1;position:relative}
+.step-num{font-size:13px;font-weight:900;color:#9b6b1f;margin-bottom:15px}
+.step h3{margin-bottom:8px}
+.step p{color:var(--muted);font-size:14px}
+.cta{background:linear-gradient(120deg,#111827,#202d42);color:#fff;border-radius:24px;padding:55px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta p{color:#c8d0dc;max-width:620px;margin-top:10px}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}
+.contact-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px}
+.contact-item{padding:17px 0;border-bottom:1px solid var(--line)}
+.contact-item:last-child{border:0}
+.contact-item small{display:block;color:var(--muted);margin-bottom:4px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form input,form textarea,form select{width:100%;padding:14px 15px;border:1px solid #d7dce3;border-radius:10px;font:inherit;background:#fff}
+form textarea{min-height:140px;resize:vertical;grid-column:1/-1}
+form select{grid-column:1/-1}
+form button{grid-column:1/-1}
+footer{background:#070b12;color:#aeb8c7;padding:42px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:30px}
+.footer-logo{color:#fff;font-weight:900;font-size:20px}
+.mobile{display:none}
+@media(max-width:900px){
+ .navlinks{display:none}.mobile{display:block}
+ .grid4{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr 1fr}
+ .struct,.contact{grid-template-columns:1fr}.struct-image{min-height:350px}
+ .process{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .topbar .container{justify-content:center}.topbar span:last-child{display:none}
+ .nav{height:68px}.logo{font-size:18px}
+ .hero{min-height:620px}.hero-content{padding:70px 0}h1{letter-spacing:-1.8px}
+ .section{padding:65px 0}.section-head{display:block}.section-head p{margin-top:15px}
+ .grid4,.project-grid,.process,form{grid-template-columns:1fr}
+ .cta{padding:34px 25px;display:block}.cta .btn{margin-top:22px}
+ .checks{grid-template-columns:1fr}.footer-grid{display:block}
+ .footer-grid > div+div{margin-top:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Servicios de ingeniería y consultoría en edificaciones</span>
+    <span>Lima, Perú · Atención previa coordinación</span>
+  </div>
+</div>
+
+<header>
+  <nav class="container nav">
+    <a href="#inicio" class="logo">Apolo's Gp <span>CONSTRUCIONES</span></a>
+    <div class="navlinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#estructuras">Estructuras</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-primary" href="#contacto">Cotizar proyecto</a>
+    </div>
+    <a class="btn btn-dark mobile" href="#contacto">Cotizar</a>
+  </nav>
+</header>
+
+<main>
+<section id="inicio" class="hero">
+ <div class="container">
+  <div class="hero-content">
+   <div class="kicker">Ingeniería · Diseño · Construcción</div>
+   <h1>Diseñamos edificaciones pensadas para construir mejor.</h1>
+   <p>Servicios integrales de ingeniería y consultoría para viviendas, edificaciones y proyectos de construcción, desde la concepción arquitectónica hasta el desarrollo estructural.</p>
+   <div class="actions">
+    <a class="btn btn-primary" href="#contacto">Solicitar cotización →</a>
+    <a class="btn btn-outline" href="#proyectos">Ver proyectos</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="servicios" class="section">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">Qué hacemos</div><h2>Soluciones técnicas para cada etapa.</h2></div>
+   <p>Una propuesta orientada a clientes que buscan claridad técnica, documentación ordenada y soluciones compatibles con las necesidades reales del proyecto.</p>
+  </div>
+  <div class="grid4">
+   <article class="card"><div class="icon">⌂</div><h3>Diseño arquitectónico</h3><p>Distribución de ambientes, fachadas, planos y propuestas para viviendas unifamiliares y multifamiliares.</p></article>
+   <article class="card"><div class="icon">▦</div><h3>Diseño estructural</h3><p>Modelamiento y desarrollo de elementos estructurales de concreto armado para edificaciones.</p></article>
+   <article class="card"><div class="icon">◈</div><h3>Modelamiento BIM</h3><p>Modelos y documentación mediante herramientas como Revit, AutoCAD y plataformas de análisis estructural.</p></article>
+   <article class="card"><div class="icon">ₛ</div><h3>Metrados y costos</h3><p>Cuantificación de partidas, presupuestos y documentación para apoyar la planificación del proyecto.</p></article>
+   <article class="card"><div class="icon">⌖</div><h3>Topografía</h3><p>Levantamientos y representación de información del terreno para el desarrollo de proyectos.</p></article>
+   <article class="card"><div class="icon">▤</div><h3>Expedientes técnicos</h3><p>Organización y desarrollo de documentación técnica para proyectos de edificación.</p></article>
+   <article class="card"><div class="icon">✓</div><h3>Compatibilización</h3><p>Revisión de interferencias entre arquitectura, estructuras e instalaciones antes de la ejecución.</p></article>
+   <article class="card"><div class="icon">↗</div><h3>Consultoría</h3><p>Apoyo técnico para decisiones de diseño, revisión de soluciones y planificación de proyectos.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="proyectos" class="section dark-section">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">Portafolio demostrativo</div><h2>Proyectos que muestran nuestra capacidad.</h2></div>
+   <p>Las imágenes representan propuestas conceptuales para mostrar el tipo de entregables que puede desarrollar la empresa.</p>
+  </div>
+  <div class="project-grid">
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85" alt="Vivienda moderna">
+    <div class="project-body"><small>Tingo María</small><h3>Vivienda multifamiliar de 5 niveles</h3><p>Propuesta integral de arquitectura y especialidad de estructuras.</p><div class="tags"><span class="tag">Arquitectura</span><span class="tag">Estructuras</span><span class="tag">BIM</span></div></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85" alt="Proyecto residencial">
+    <div class="project-body"><small>Pucallpa</small><h3>Edificación residencial contemporánea</h3><p>Desarrollo conceptual de fachada, plantas arquitectónicas y criterios estructurales.</p><div class="tags"><span class="tag">Diseño</span><span class="tag">Planos</span><span class="tag">Concreto armado</span></div></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85" alt="Interior de vivienda">
+    <div class="project-body"><small>Huamanga</small><h3>Vivienda urbana de varios niveles</h3><p>Propuesta orientada a optimizar distribución, iluminación y solución estructural.</p><div class="tags"><span class="tag">Arquitectura</span><span class="tag">Estructuras</span><span class="tag">Planificación</span></div></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" alt="Fachada residencial">
+    <div class="project-body"><small>Arequipa</small><h3>Vivienda familiar contemporánea</h3><p>Ejemplo de coordinación entre propuesta arquitectónica y sistema resistente.</p><div class="tags"><span class="tag">Fachada</span><span class="tag">Estructuras</span><span class="tag">Modelado 3D</span></div></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Espacio de trabajo">
+    <div class="project-body"><small>Consultoría</small><h3>Coordinación de especialidades</h3><p>Organización de planos y revisión de interferencias para reducir retrabajos.</p><div class="tags"><span class="tag">Compatibilización</span><span class="tag">Planos</span></div></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85" alt="Obra de construcción">
+    <div class="project-body"><small>Ingeniería</small><h3>Documentación para construcción</h3><p>Entregables técnicos orientados a facilitar la ejecución y control del proyecto.</p><div class="tags"><span class="tag">Metrados</span><span class="tag">Costos</span><span class="tag">Expediente</span></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="estructuras" class="section">
+ <div class="container struct">
+  <div class="struct-image" aria-label="Visual conceptual de ingeniería"></div>
+  <div>
+   <div class="eyebrow">Especialidad</div>
+   <h2>Ingeniería estructural con enfoque constructivo.</h2>
+   <p style="color:var(--muted);margin-top:18px">El desarrollo estructural se integra con la arquitectura desde las primeras etapas para buscar soluciones técnicamente coherentes y ejecutables.</p>
+   <div class="checks">
+    <div class="check"><b>✓</b><span>Modelamiento estructural de edificaciones.</span></div>
+    <div class="check"><b>✓</b><span>Elementos de concreto armado.</span></div>
+    <div class="check"><b>✓</b><span>Vigas, columnas, losas y cimentaciones.</span></div>
+    <div class="check"><b>✓</b><span>Revisión de sistemas resistentes.</span></div>
+    <div class="check"><b>✓</b><span>Compatibilización arquitectura–estructuras.</span></div>
+    <div class="check"><b>✓</b><span>Documentación y planos técnicos.</span></div>
+   </div>
+   <a href="#contacto" class="btn btn-dark">Consultar proyecto →</a>
+  </div>
+ </div>
+</section>
+
+<section id="proceso" class="section" style="background:#fff">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">Cómo trabajamos</div><h2>Del primer contacto al entregable.</h2></div>
+   <p>Un proceso sencillo para mantener claras las necesidades, alcances y entregables del proyecto.</p>
+  </div>
+  <div class="process">
+   <div class="step"><div class="step-num">01 / CONSULTA</div><h3>Conocemos el proyecto</h3><p>Se recopila ubicación, dimensiones, necesidades y objetivos del cliente.</p></div>
+   <div class="step"><div class="step-num">02 / PROPUESTA</div><h3>Definimos el alcance</h3><p>Se plantea la solución, entregables, tiempos y condiciones del servicio.</p></div>
+   <div class="step"><div class="step-num">03 / DESARROLLO</div><h3>Desarrollamos la ingeniería</h3><p>Se elaboran planos, modelos, cálculos y documentación según el alcance acordado.</p></div>
+   <div class="step"><div class="step-num">04 / ENTREGA</div><h3>Revisamos y entregamos</h3><p>Se realiza la revisión final y se entrega la documentación correspondiente.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="cta">
+   <div><div class="eyebrow">¿Tienes un proyecto?</div><h2>Conversemos sobre tu próxima edificación.</h2><p>Cuéntanos qué necesitas y recibe una orientación inicial sobre el servicio que corresponde a tu proyecto.</p></div>
+   <a class="btn btn-primary" href="#contacto">Solicitar cotización →</a>
+  </div>
+ </div>
+</section>
+
+<section id="contacto" class="section">
+ <div class="container contact">
+  <div>
+   <div class="eyebrow">Contacto</div>
+   <h2>Cuéntanos qué necesitas.</h2>
+   <p style="color:var(--muted);margin-top:17px">Puedes solicitar información sobre diseño arquitectónico, estructuras, expedientes, metrados, costos, topografía o consultoría.</p>
+   <div class="contact-box" style="margin-top:25px">
+    <div class="contact-item"><small>Empresa</small><strong>Apolo's Gp CONSTRUCIONES</strong></div>
+    <div class="contact-item"><small>Ubicación</small><strong>Lima, Perú</strong></div>
+    <div class="contact-item"><small>Correo</small><strong>inggeremias14@gmail.com</strong></div>
+    <div class="contact-item"><small>Atención</small><strong>Previa coordinación</strong></div>
+   </div>
+  </div>
+  <div class="contact-box">
+   <form onsubmit="sendMessage(event)">
+    <input id="name" required placeholder="Nombre completo">
+    <input id="phone" required placeholder="Teléfono / WhatsApp">
+    <input id="email" type="email" placeholder="Correo electrónico">
+    <select id="service" required>
+      <option value="">Servicio de interés</option>
+      <option>Diseño arquitectónico</option>
+      <option>Diseño estructural</option>
+      <option>Modelamiento BIM</option>
+      <option>Metrados y costos</option>
+      <option>Expediente técnico</option>
+      <option>Topografía</option>
+      <option>Consultoría</option>
+    </select>
+    <textarea id="message" required placeholder="Describe brevemente tu proyecto: terreno, niveles, ubicación, qué necesitas, etc."></textarea>
+    <button class="btn btn-primary" type="submit">Enviar consulta por WhatsApp →</button>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-grid">
+  <div><div class="footer-logo">Apolo's Gp CONSTRUCIONES</div><p style="margin-top:8px">Ingeniería · Diseño · Construcción</p></div>
+  <div><p>© 2026 Apolo's Gp CONSTRUCIONES. Todos los derechos reservados.</p></div>
+ </div>
+</footer>
+
+<script>
+function sendMessage(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value;
+ const phone=document.getElementById('phone').value;
+ const email=document.getElementById('email').value;
+ const service=document.getElementById('service').value;
+ const message=document.getElementById('message').value;
+ const text=`Hola, Apolo's Gp CONSTRUCIONES.%0A%0ANombre: ${name}%0ATeléfono: ${phone}%0ACorreo: ${email}%0AServicio: ${service}%0A%0AProyecto:%0A${message}`;
+ // Reemplazar 51999999999 por el número de WhatsApp comercial real.
+ window.open(`https://wa.me/51999999999?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
